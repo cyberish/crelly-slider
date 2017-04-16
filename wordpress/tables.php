@@ -72,6 +72,7 @@ class CrellySliderTables {
 		link TEXT CHARACTER SET utf8,
 		link_new_tab INT DEFAULT 0,
 		custom_css TEXT CHARACTER SET utf8,
+		date_start TEXT CHARACTER SET utf8,
 		UNIQUE KEY id (id)
 		);";
 
