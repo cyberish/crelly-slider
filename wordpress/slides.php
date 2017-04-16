@@ -306,6 +306,30 @@ function crellyslider_printSlide($slider, $slide, $edit) {
 				</td>
 			</tr>
 			<tr>
+				<td class="cs-name"><?php _e('Startdate', 'crelly-slider'); ?></td>
+				<td class="cs-content">
+					<?php
+					wp_enqueue_script('jquery-ui-datepicker');
+					wp_enqueue_style('jquery-ui-css', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
+					?>
+					<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							$('.cs-date_start').datepicker({
+								dateFormat : 'yy-mm-dd'
+							});
+						});
+					</script>
+					<?php
+					if($void) echo '<input type="text" class="cs-date_start" value=""/>';
+					else echo '<input class="cs-date_start" type="text" value="' . stripslashes($slide->date_start) .'" />';
+					?>
+					
+				</td>
+				<td class="cs-description">
+					<?php _e('The date when this slide will start.', 'crelly-slider'); ?>
+				</td>
+			</tr>
+			<tr>
 				<td class="cs-name"><?php _e('Custom CSS', 'crelly-slider'); ?></td>
 				<td class="cs-content">
 					<?php
