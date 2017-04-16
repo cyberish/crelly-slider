@@ -1448,6 +1448,7 @@
 					link : slide.find('.cs-background-link').val(),
 					link_new_tab : slide.find('.cs-background-link_new_tab').prop('checked') ? 1 : 0,
 					custom_css : content.find('.cs-slide-custom_css').val(),
+					date_start : content.find('.cs-date_start').val(),
 				};
 
 				final_options['options'][i] = options;
