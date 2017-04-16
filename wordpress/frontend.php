@@ -50,7 +50,7 @@ class CrellySliderFrontend {
 		}
 
 		$slider_id = esc_sql($slider->id);
-		$slides = $wpdb->get_results($wpdb->prepare('SELECT * FROM ' . $wpdb->prefix . 'crellyslider_slides WHERE draft = 0 AND slider_parent = %d ORDER BY position', $slider_id));
+		$slides = $wpdb->get_results($wpdb->prepare('SELECT * FROM ' . $wpdb->prefix . 'crellyslider_slides WHERE draft = 0 AND slider_parent = %d AND date_start <= CURDATE() ORDER BY position', $slider_id));
 
 		$output = '';
 
